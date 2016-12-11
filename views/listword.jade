@@ -1,0 +1,19 @@
+//
+   Created by sn on 2016/11/18.
+
+extends layout
+block content
+    main.main
+        section.show
+            p
+                h2.title
+            ul
+                each val in words
+                    li
+                        a(href="w/#{val.id}") 查看
+                        a(href="toedit/#{val.id}") 编辑
+                        span #{val.chinese}
+                        span #{val.english}
+
+
+

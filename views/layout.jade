@@ -1,0 +1,20 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    p
+      a.btn.btn-primary.btn-large(href="/word/list") 列表
+    p
+      a.btn.btn-large.reg-bnt(href="/word/toadd") 添加
+    p
+      a.btn.btn-primary.btn-large(href="/course/list") 课程中心
+    p
+      a.btn.btn-large.reg-bnt(href="/word/list/type/word") 查看单词
+    p
+      a.btn.btn-large.reg-bnt(href="/word/list/type/phrase") 查看词组
+    p
+      a.btn.btn-large.reg-bnt(href="/word/list/type/sentence") 查看句子
+
+    block content

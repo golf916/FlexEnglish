@@ -1,0 +1,26 @@
+//
+   Created by sn on 2016/11/18.
+
+extends layout
+block content
+    h3.field.wordheader #{title}
+    form.wordform(method='post')
+        p.mess #{message}
+        div.item
+            label.label(for='chinese') 中文
+            input(type='text',placeholder='中文',id='chinese',name='chinese')
+        div.item
+            label.label(for='english') 英文
+            input(type='text',placeholder='英文',id='english',name='english')
+        div.item
+            label.label(for='type') 类型
+            input(type='text',placeholder='内容',id='type',name='type')
+        div.item
+            label.label(for='group') 分组
+            input(type='text',placeholder='内容',id='group',name='group')
+        div.item
+            label.label(for='origin') 来源
+            input(type='text',placeholder='来源',id='origin',name='origin')
+        div.item
+            label.label
+            input(type='submit' id='sub',name='sub' value='提交')

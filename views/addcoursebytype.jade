@@ -1,0 +1,17 @@
+//
+   Created by sn on 2016/12/08.
+
+extends layout
+block content
+    h3.field.wordheader #{title}
+    form.courseform(method='post')
+        p.mess #{message}
+        div.item
+            label.label(for='type') 类型
+            input(type='text',placeholder='内容',id='type',name='type')
+        div.item
+            label.label(for='number') 组内个数
+            input(type='text',placeholder='组内个数',id='number',name='number')
+        div.item
+            label.label
+            input(type='submit' id='sub',name='sub' value='提交')

@@ -1,0 +1,13 @@
+extends layout
+block content
+    #container.col
+        if info
+            p game over
+        else
+            p.
+                您的学习计划：#{course.name}
+                #{word.chinese}.
+            p
+                input(type='text',placeholder='回答',id='answer',name='answer')
+            p
+                a(href="/course/word?pid=#{course.id}&wid=#{word.id}") 看参考答案

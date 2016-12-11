@@ -1,0 +1,27 @@
+//
+   Created by sn on 2016/11/18.
+
+extends layout
+block content
+    main.main
+        section.show
+            p
+                h2.title
+            ul
+                if info
+                    each val in courses
+                        li
+                            a(href='/course/one/#{val.id}')
+                                h3=val.name
+                            p 您学习了N次该课程
+                            if val.position == 9
+                                span finished
+                                a(href='/course/reset/#{val.id}') learn it again
+                            else if val.position == 0
+                                span new
+                            else
+                                span in process
+                else
+                    li no records
+                    span please create it.
+                    a(href='/course/createrule') create
