@@ -1,17 +1,7 @@
-/**
- * Created by weiqi on 2016/6/29.
- */
 var mongoose=require('../db').mongoose;
 var schema=new mongoose.Schema({
-    english:{ type: String, required: true },
-    chinese:{ type: String, required: true },
-    type:{ type: String,default:""},//word,phrase,sentence,block
-    group:{ type: String,default:""},//education,work,tech,env
-    status:{ type: String,default:"enabled"},//enabled,disabled
-    origin:{ type: String,default:""},//such as :Collins,Oxford
-    comment:{ type: String,default:""},//
-    publisher:{ type: String,default:"Ricky"},
-    create_time: { type:Date, default:Date.now },
+    name:{ type: String, required: true,unique: true },
+    rank:{ type: String,default:"" },//1,2,3,4,5
 });
 var Word=mongoose.model('Word',schema);
 module.exports=Word;

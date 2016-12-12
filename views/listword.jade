@@ -10,10 +10,10 @@ block content
             ul
                 each val in words
                     li
-                        a(href="w/#{val.id}") 查看
-                        a(href="toedit/#{val.id}") 编辑
-                        span #{val.chinese}
-                        span #{val.english}
+                        a(href="view/#{val.id}") 查看
+                        a(href="edit/#{val.id}") 编辑
+                        span #{val.name}
+                        span #{val.rank}
 
 
 

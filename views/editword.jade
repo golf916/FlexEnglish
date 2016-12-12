@@ -8,20 +8,11 @@ block content
         p.mess #{message}
         input(type='hidden',name='id', value='#{word.id}')
         div.item
-            label.label(for='chinese') 中文
-            input(type='text', placeholder='中文',id='chinese',name='chinese', value='#{word.chinese}')
+            label.label(for='name') 单词
+            input(type='text', placeholder='单词',id='name',name='name', value='#{word.name}')
         div.item
-            label.label(for='english') 英文
-            input(type='text',placeholder='英文',id='english',name='english', value='#{word.english}')
-        div.item
-            label.label(for='type') 类型
-            input(type='text',placeholder='内容',id='type',name='type', value='#{word.type}')
-        div.item
-            label.label(for='group') 分组
-            input(type='text',placeholder='内容',id='group',name='group', value='#{word.group}')
-        div.item
-            label.label(for='origin') 来源
-            input(type='text',placeholder='来源',id='origin',name='origin', value='#{word.origin}')
+            label.label(for='rank') 星级
+            input(type='text',placeholder='星级',id='rank',name='rank', value='#{word.rank}')
         div.item
             label.label
             input(type='submit' id='sub',name='sub' value='提交')

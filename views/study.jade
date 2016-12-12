@@ -6,8 +6,8 @@ block content
         else
             p.
                 您的学习计划：#{course.name}
-                #{word.chinese}.
+                #{study.chinese}.
             p
                 input(type='text',placeholder='回答',id='answer',name='answer')
             p
-                a(href="/course/word?pid=#{course.id}&wid=#{word.id}") 看参考答案
+                a(href="/course/study?pid=#{course.id}&wid=#{study.id}") 看参考答案

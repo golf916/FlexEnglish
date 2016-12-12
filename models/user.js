@@ -1,6 +1,3 @@
-/**
- * Created by weiqi on 2016/6/29.
- */
 var mongoose=require('../db').mongoose;
 var schema=new mongoose.Schema({
     username:{ type: String, required: true, unique: true },

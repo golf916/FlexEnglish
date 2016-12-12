@@ -1,0 +1,27 @@
+//
+   Created by sn on 2016/11/18.
+
+extends layout
+block content
+    h3.field.studyheader #{title}
+    form.studyform(action='../edit',method='post')
+        p.mess #{message}
+        input(type='hidden',name='id', value='#{study.id}')
+        div.item
+            label.label(for='chinese') 中文
+            input(type='text', placeholder='中文',id='chinese',name='chinese', value='#{study.chinese}')
+        div.item
+            label.label(for='english') 英文
+            input(type='text',placeholder='英文',id='english',name='english', value='#{study.english}')
+        div.item
+            label.label(for='type') 类型
+            input(type='text',placeholder='内容',id='type',name='type', value='#{study.type}')
+        div.item
+            label.label(for='group') 分组
+            input(type='text',placeholder='内容',id='group',name='group', value='#{study.group}')
+        div.item
+            label.label(for='origin') 来源
+            input(type='text',placeholder='来源',id='origin',name='origin', value='#{study.origin}')
+        div.item
+            label.label
+            input(type='submit' id='sub',name='sub' value='提交')
