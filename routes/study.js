@@ -50,7 +50,7 @@ router.post('/edit', function(req, res) {
 /*
  添加一条study的界面
  */
-router.get('/toadd', function(req, res, next) {
+router.get('/add', function(req, res, next) {
     // res.send('respond with a resource');
     res.render('addstudy', { title: '添加' });
 });
@@ -58,7 +58,7 @@ router.get('/toadd', function(req, res, next) {
 /*
  编辑一条study的界面
  */
-router.get('/toedit/:id', function(req, res, next) {
+router.get('/edit/:id', function(req, res, next) {
     console.log("study id:"+req.params.id);
     Study.findById(req.params.id,function (err, study) {
         res.render('editstudy', { title: '编辑',study: study });
@@ -68,7 +68,7 @@ router.get('/toedit/:id', function(req, res, next) {
 /*
  查看一条study
  */
-router.get('/one/:id',function(req,res){
+router.get('/view/:id',function(req,res){
     console.log("study id:"+req.params.id);
     Study.findById(req.params.id,function (err, study) {
         console.log("study id:"+study);
@@ -90,7 +90,7 @@ router.get('/list/type/:type',function(req,res){
 /*
 删除study
  */
-router.get('/d/:id',function(req,res){
+router.get('/del/:id',function(req,res){
     console.log("delete id:"+req.params.id);
     Study.findById(req.params.id,function (err, study) {
         study.remove();

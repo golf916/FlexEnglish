@@ -9,6 +9,7 @@ var flash = require('connect-flash');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var word = require('./routes/word');
+var study = require('./routes/study');
 var course = require('./routes/course');
 var webdata = require('./routes/webdata');
 
@@ -30,6 +31,7 @@ app.use(flash());
 app.use('/', routes);
 app.use('/users', users);
 app.use('/word', word);
+app.use('/study', study);
 app.use('/course', course);
 app.use('/webdata', webdata);
 

@@ -7,6 +7,14 @@ router.get('/', function(req, res, next) {
 });
 
 /*
+ 添加一条word的界面
+ */
+router.get('/add', function(req, res, next) {
+    // res.send('respond with a resource');
+    res.render('addword', { title: '添加' });
+});
+
+/*
  添加一条word
  */
 router.post('/add', function(req, res) {
@@ -44,14 +52,6 @@ router.post('/edit', function(req, res) {
 });
 
 /*
- 添加一条word的界面
- */
-router.get('/add', function(req, res, next) {
-    // res.send('respond with a resource');
-    res.render('addword', { title: '添加' });
-});
-
-/*
  编辑一条word的界面
  */
 router.get('/edit/:id', function(req, res, next) {
@@ -61,16 +61,16 @@ router.get('/edit/:id', function(req, res, next) {
     });
 });
 
-/*
- 查看一条word
- */
-router.get('/view/:id',function(req,res){
-    console.log("word id:"+req.params.id);
-    Word.findById(req.params.id,function (err, word) {
-        console.log("word id:"+word);
-        res.render('word', { word: word });
-    });
-});
+// /*
+//  查看一条word
+//  */
+// router.get('/view/:id',function(req,res){
+//     console.log("word id:"+req.params.id);
+//     Word.findById(req.params.id,function (err, word) {
+//         console.log("word id:"+word);
+//         res.render('word', { word: word });
+//     });
+// });
 
 /*
 删除word
