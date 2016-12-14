@@ -13,7 +13,10 @@ router.post('/add', function(req, res) {
     var newStudy=new Study({
         english:req.body.english,
         chinese:req.body.chinese,
-        type:req.body.type
+        group:req.body.group,
+        type:req.body.type,
+        origin:req.body.origin,
+        rank:req.body.rank
     });
     console.log("study="+newStudy);
     newStudy.save(function(err) {
@@ -40,6 +43,7 @@ router.post('/edit', function(req, res) {
         study.type=req.body.type;
         study.group=req.body.group;
         study.origin=req.body.origin;
+        study.rank=req.body.rank;
         Study.update({_id:_id},study,function(err){
             console.log("edit study success! study is:"+study);
             res.redirect('/study/list');
@@ -88,6 +92,17 @@ router.get('/list/type/:type',function(req,res){
 });
 
 /*
+ 按rank查看list
+ */
+router.get('/list/rank/:rank',function(req,res){
+    console.log("req.params.rank="+req.params.rank);
+    Study.find({rank:req.params.rank},function(err,studies){
+        //console.log("study list by type:"+studies);
+        res.render('liststudy', { title: '列表',studies: studies });
+    });
+});
+
+/*
 删除study
  */
 router.get('/del/:id',function(req,res){
@@ -114,6 +129,25 @@ router.get('/list',function(req,res){
         }
         // res.json({studies: studies});
         res.render('liststudy', { title: '列表',studies: studies });
+    });
+});
+
+/*
+ 查看list
+ */
+router.get('/list-admin',function(req,res){
+    var page=req.query.page;
+    var perpage=req.query.per_page;
+    console.log("page="+page);
+    console.log("perpage="+perpage);
+    Study.find(function(err,studies){
+        if (err) {
+            // req.flash('error', err);
+            console.log("error="+err);
+            res.render('error', { error: err });
+        }
+        // res.json({studies: studies});
+        res.render('liststudy-admin', { title: '列表',studies: studies });
     });
 });
 

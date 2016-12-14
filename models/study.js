@@ -6,7 +6,7 @@ var schema=new mongoose.Schema({
     group:{ type: String,default:""},//education,work,tech,env
     status:{ type: String,default:"enabled"},//enabled,disabled
     origin:{ type: String,default:""},//such as :Collins,Oxford
-    rank:{ type: String,default:""},//1,2,3,4,5
+    rank:{ type: String,default:"0"},//1,2,3,4,5
     publisher:{ type: String,default:"Ricky"},
     create_time: { type:Date, default:Date.now },
 });
