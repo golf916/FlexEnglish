@@ -23,8 +23,11 @@ block content
                 each val in studies
                     li
                         a(href="view/#{val.id}") 查看
+                        | &nbsp;
                         a(href="edit/#{val.id}") 编辑
+                        | &nbsp;
                         a(href="del/#{val.id}") 删除
+                        | &nbsp;
                         span #{val.chinese}
                         span #{val.english}
 

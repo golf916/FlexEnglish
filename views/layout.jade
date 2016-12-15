@@ -4,27 +4,6 @@ html
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
-    p
-      a(href="/study/list") 学习列表
-      | &nbsp;
-      a(href="/study/list-admin") 学习管理
-    p
-      a(href="/word/list") 单词列表
-    p
-      a(href="/webdata/padata") 抓取例句
-    p
-      a(href="/word/add") 添加单词
-    p
-      a(href="/study/add") 添加学习
-    p
-      a(href="/course/list") 课程中心
-    p
-      a(href='/course/createrule') 创建课程
-    p
-      a(href="/study/list/type/word") 查看单词
-    p
-      a(href="/study/list/type/phrase") 查看词组
-    p
-      a.btn.btn-large.reg-bnt(href="/study/list/type/sentence") 查看句子
-
+    include user-menu
+    hr
     block content

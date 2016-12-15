@@ -7,7 +7,12 @@ var Study=require('../models/study');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('index', { title: 'FlexEnglish', description: 'FlexEnglish,从翻译上突破英语' });
+});
+
+/* GET home page. */
+router.get('/admin', function(req, res, next) {
+  res.render('admin', { title: 'Admin' });
 });
 
 router.get('/random', function(req, res, next) {
