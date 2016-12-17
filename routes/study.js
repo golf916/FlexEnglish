@@ -109,7 +109,7 @@ router.get('/del/:id',function(req,res){
     console.log("delete id:"+req.params.id);
     Study.findById(req.params.id,function (err, study) {
         study.remove();
-        res.redirect("/study/list");
+        res.redirect("/study/list-admin");
     });
 });
 
