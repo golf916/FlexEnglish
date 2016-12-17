@@ -33,7 +33,7 @@ router.get('/random', function(req, res, next) {
 
 /* 读取文件，将中英文例句导入数据库. */
 router.get('/translationstodb', function(req, res, next) {
-  lineReader.eachLine('data.txt', function(line, last) {
+  lineReader.eachLine('translations.txt', function(line, last) {
     console.log(line);
     var arrLine = separate(line);
     console.log("中文 :"+arrLine[0]);

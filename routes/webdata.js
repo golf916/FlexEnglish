@@ -43,7 +43,7 @@ router.get('/pa/:word', function(req, res, next) {
 /* GET data from web according to word. */
 router.get('/padata', function(req, res, next) {
 
-	Word.find({ status: 'init'},function (err, words) {
+	Word.find({status: 'init'}, null,{limit:10}, function (err, words) {
 		if (err) {
 			console.error(err);
 			return;

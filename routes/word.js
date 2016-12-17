@@ -87,11 +87,11 @@ router.get('/del/:id',function(req,res){
  查看list
  */
 router.get('/list',function(req,res){
-    var page=req.query.page;
-    var perpage=req.query.per_page;
+    var page = req.query.page ? parseInt(req.query.page) : 1;
+    var perpage=req.query.page ? parseInt(req.query.perpage) : 10;
     console.log("page="+page);
     console.log("perpage="+perpage);
-    Word.find(function(err,words){
+    Word.find({}, null, {skip: (page-1)*perpage, limit: perpage}, function(err,words){
         if (err) {
             // req.flash('error', err);
             console.log("error="+err);
