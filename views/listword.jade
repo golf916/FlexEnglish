@@ -7,16 +7,18 @@ block content
         section.show
             p
                 h2.title
-            ul
-                each val in words
-                    li
-                        a(href="edit/#{val.id}") 编辑
-                        | &nbsp;
-                        span #{val.name}
-                        | &nbsp;
-                        span #{val.rank}
-                        | &nbsp;
-                        span #{val.status}
+            table
+                each value, key in words
+                    tr
+                        td #{key}
+                        td #{value.name}
+                        td #{value.rank}
+                        td #{value.status}
+                        td
+                            a(href="edit/#{value.id}") 编辑
+                            a(href="del/#{value.id}") 删除
+
+
 
 
 
